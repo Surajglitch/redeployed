@@ -1,7 +1,7 @@
 import Link from "next/link";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { buttonVariants } from "./ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BarChart2 } from "lucide-react";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 const Navbar = async () => {
@@ -19,6 +19,17 @@ const Navbar = async () => {
           </Link>
 
           <div className="h-full flex items-center space-x-4">
+            <Link
+              href="/portfolio"
+              className={buttonVariants({
+                size: "sm",
+                variant: "ghost",
+                className: "hidden sm:flex items-center gap-1",
+              })}
+            >
+              <BarChart2 className="h-4 w-4 mr-1" />
+              Portfolio
+            </Link>
             {user ? (
               <>
                 <Link
